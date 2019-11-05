@@ -9,3 +9,4 @@ These are the **demo** files from the NCEAS tutorial.
 ## New session
 
 Now I am working from RStudio.  And I will sync later.
+Jeanette added a change
