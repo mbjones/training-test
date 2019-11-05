@@ -16,9 +16,10 @@ knitr::opts_chunk$set(echo = TRUE)
 - Mapping
 - Discussion
 
+![](ComplexSelf.jpg)
 <img src="ComplexSelf.jpg" title="My brain"/>
 
-```{r graphics, fig.align='center', echo=FALSE}
-knitr::include_graphics("ComplexSelf.jpg")
+```{r graphics, fig.align='center', echo=FALSE, out.width='75%'}
+knitr::include_graphics("https://learning.nceas.ucsb.edu/images/NCEAS_logo.png")
 ```
 
