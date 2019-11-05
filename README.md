@@ -2,7 +2,7 @@
 
 These are the **demo** files from the NCEAS tutorial.
 
-- apples
+- apple bananas from Jeanette
 - oranges
 - banannas from Matt
 - other files
