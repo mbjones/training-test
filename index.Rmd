@@ -15,3 +15,10 @@ knitr::opts_chunk$set(echo = TRUE)
 - [Analysis](analysis.html)
 - Mapping
 - Discussion
+
+<img src="ComplexSelf.jpg" title="My brain"/>
+
+```{r graphics, fig.align='center', echo=FALSE}
+knitr::include_graphics("ComplexSelf.jpg")
+```
+
