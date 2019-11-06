@@ -23,6 +23,6 @@ knitr::opts_chunk$set(echo = TRUE)
 knitr::include_graphics("https://learning.nceas.ucsb.edu/images/NCEAS_logo.png")
 ```
 
-# Additional Information
+## Additional Information
 
 Jeanette added this great insightful stuff.
