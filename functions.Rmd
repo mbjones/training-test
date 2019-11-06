@@ -1,0 +1,63 @@
+---
+title: "functions"
+author: "Matt Jones"
+date: "11/6/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(roxygen2)
+```
+
+```{r}
+airtemps = c(212, 30, 78, 32)
+celsius1 <- (airtemps[1]-32)*5/9
+celsius2 <- (airtemps[2]-32)*5/9
+celsius3 <- (airtemps[3]-32)*5/9
+celsius4 <- (airtemps[4]-32)*5/9
+
+celsius1
+```
+
+```{r}
+fahr2celsius <- function(fahr) {
+    celsius <- (fahr-32)*5/9
+    return(celsius)
+}
+```
+
+Use our function
+
+```{r}
+celsius_f <- fahr2celsius(airtemps[1])
+celsius_f == celsius1
+
+celsius <- fahr2celsius(airtemps)
+celsius4 == celsius[4]
+```
+
+```{r}
+#' Converts celsius to fahrenheit temperatures
+#'
+#' A little needed but more detailed explanation
+#' goes here.
+#' @param celsius the temperature in degrres celsius to be converted
+#' @import stats
+#' @return the temperature in fahrenheit
+celsius2fahr <- function(celsius) {
+    fahr <- celsius*9/5 + 32
+    return(fahr)
+}
+```
+
+```{r}
+fahr <- celsius2fahr(celsius)
+fahr
+fahr == airtemps
+```
+
+
