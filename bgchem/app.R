@@ -19,8 +19,11 @@ ui <- fluidPage(
     # Application title
     titlePanel("Water biogeochemistry"),
     p("Data for this application are from: "),
-    tags$ul(tags$li("Craig Tweedie. 2009. North Pole Environmental Observatory Bottle Chemistry. Arctic Data Center.",
-    tags$a("doi:10.18739/A25T3FZ8X", href="http://doi.org/10.18739/A25T3FZ8X"))),
+    tags$ul(
+        tags$li("Craig Tweedie. 2009. North Pole Environmental Observatory Bottle Chemistry. Arctic Data Center.",
+                tags$a("doi:10.18739/A25T3FZ8X", href="http://doi.org/10.18739/A25T3FZ8X")
+        )
+    ),
     tags$br(),
     tags$hr(),
 
@@ -73,6 +76,10 @@ server <- function(input, output) {
                                              y = input$y_variable,
                                              color = input$color_variable)) +
             geom_point(size=4) +
+            scale_color_gradient2(low="midnightblue",
+                                  mid="white",
+                                  high="firebrick",
+                                  midpoint = mean(bg_chem[,input$color_variable])) +
             theme_light()
     })
 }
