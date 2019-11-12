@@ -39,7 +39,7 @@ ui <- fluidPage(
             ),
             # Show a plot of the generated distribution
             mainPanel(
-               plotOutput("distPlot")
+                plotOutput("depthPlot")
             )
         ),
 
@@ -52,9 +52,9 @@ ui <- fluidPage(
                 selectInput("color_variable", "Color", cols, selected = "P")
             ),
 
-            # Show a plot of the generated distribution
+            # Show a plot with configurable axes
             mainPanel(
-                plotOutput("secondPlot")
+                plotOutput("varPlot")
             )
         ),
         tags$hr()
@@ -64,14 +64,14 @@ ui <- fluidPage(
 # Define server logic required to draw a histogram
 server <- function(input, output) {
 
-    output$distPlot <- renderPlot({
-       ggplot(bg_chem, mapping = aes(x = CTD_Depth, y = CTD_Salinity)) +
+    output$depthPlot <- renderPlot({
+        ggplot(bg_chem, mapping = aes(x = CTD_Depth, y = CTD_Salinity)) +
             geom_point(size=4, color="firebrick") +
             xlim(input$depth[1],input$depth[2]) +
             theme_light()
     })
 
-    output$secondPlot <- renderPlot({
+    output$varPlot <- renderPlot({
         ggplot(bg_chem, mapping = aes_string(x = input$x_variable,
                                              y = input$y_variable,
                                              color = input$color_variable)) +
