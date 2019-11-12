@@ -1,12 +1,7 @@
 #
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
+# This is a demonstration Shiny web application showing how to build a simple
+# data exploration application.
 #
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
 library(ggplot2)
 library(dplyr)
@@ -18,7 +13,7 @@ bg_chem <- read.csv(url(data_url, method="libcurl"), stringsAsFactors = FALSE) %
     select(-Date, -Time, -Station)
 cols <- names(bg_chem)
 
-# Define UI for application that draws a histogram
+# Define UI for application that draws a two scatter plots
 ui <- fluidPage(
 
     # Application title
@@ -28,7 +23,6 @@ ui <- fluidPage(
     tags$a("doi:10.18739/A25T3FZ8X", href="http://doi.org/10.18739/A25T3FZ8X"))),
     tags$br(),
     tags$hr(),
-
 
     verticalLayout(
         # Sidebar with a slider input for depth axis
@@ -45,7 +39,9 @@ ui <- fluidPage(
                plotOutput("distPlot")
             )
         ),
+
         tags$hr(),
+
         sidebarLayout(
             sidebarPanel(
                 selectInput("x_variable", "X Variable", cols, selected = "CTD_Salinity"),
